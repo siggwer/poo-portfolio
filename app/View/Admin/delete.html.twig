@@ -1,0 +1,24 @@
+{% extends "layoutadmin.html.twig" %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+                <form action="/panel/delete/post/{{ post.id }}" method="post" class="col-lg-8 offset-lg-2">
+                    <input type="hidden" name="__csrf" id="__csrf" value="{{ __csrf }}" />
+
+                    <div class="container-fluid">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-block">
+                                <div class="card-title"><h1>{{ post.title }}</h1></div>
+                                <div class="card-img"> <img class="card-img col-md-8" src="/upload/{{ post.img }}"/></div>
+                                <p class="card-text">{{ post.chapo |nl2br }}</p>
+                                <p class="card-text">{{ post.content |nl2br }}</p>
+                                <p class="card-text"> Article publié par <strong>{{ post.author }}</strong></p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger">supprimer</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layoutadmin.html.twig" %}
+
+{% block content %}
+    <div class="container-fluid">
+
+            {% for user in users %}
+                <div class="container-fluid col-lg-4">
+               <p class="text-center">{{ user.email }}</p>
+                <form action="/panel/users" method="post">
+                    <input type="hidden" name="__csrf" id="__csrf" value="{{ __csrf }}" />
+                    <input type="hidden" name="users_id" value="{{ user.id }}">
+                    <button type="submit" class="btn-block btn-success">Ajouter le rôle admin</button>
+                </form>
+                </div>
+            {% endfor %}
+    </div>
+{% endblock %}

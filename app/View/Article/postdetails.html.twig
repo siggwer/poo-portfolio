@@ -1,0 +1,74 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    <title>{{ post.title }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if (post) %}
+            <div class="container">
+                <div class="card" style="width: 100%;">
+                    <div class="card-block">
+                        <h2 class="card-title" style="text-align: center">{{ post.title }}</h2>
+                        <div class="container col-lg-8"><img class="card-img" src="/upload/{{ post.img }}"/></div>
+                        {% if post.update_at %}
+                            <p id="date" class="card-text text-center text-justify">Date de mise à jour {{ post.update_at|date('d/m/Y') }}</p>
+                        {% else %}
+                            <p id="date" class="card-text text-center text-justify">Date de création {{ post.creation_at|date('d/m/Y') }}</p>
+                        {% endif %}
+                        <p class="card-text">{{ post.chapo |nl2br }}</p>
+                        <p class="card-text">{{ post.content |nl2br }}</p>
+                        <p class="card-text"> Article publié par <strong>{{ post.author }}</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <div class="container">
+                {% for comment in comments %}
+                    <div id="com" class="card" style="width: 100%;">
+                        <div class="card-block">
+                            <h5 class="card-title">Commentaires</h5>
+                            <p id="date" class="card-text"><strong>Par {{ comment.author }}</strong>, le  {{ comment.comment_at| date("d.m.Y à H:i")}}</p>
+                            <p class="card-text">{{ comment.comment }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <hr>
+
+            <h3 class="addcom">Ajouter votre Commentaire</h3>
+
+            {% if (__auth) %}
+                <form action="/posts/{{ post.id }}" method="post">
+                    <input type="hidden" name="__csrf" id="__csrf" value="{{ __csrf }}" />
+                    <div class="form-group">
+                        <label for="author" class="h4">Auteur</label>
+                        <input type="text" class="form-control" name="author" id="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment" class="h4 ">Commentaires</label>
+                        <textarea name="comment" id="comment" class="form-control" rows="2" required></textarea>
+                    </div>
+                    <div>
+                        <input class="btn btn-primary btest" type="submit" />
+                    </div>
+                </form>
+            {% else %}
+                <div>
+                    Vous devez vous <a href="/login">connecter</a> ou
+                    vous <a href="/register">inscrire</a>
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="col-xs text-center">
+                <h6>Aucun article trouvé</h6>
+
+                <p>Merci de bien vouloir sélectionner un article existant.<br />
+                    Ou de revenir à la page d'accueil
+                </p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

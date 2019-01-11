@@ -1,0 +1,21 @@
+{% extends "layoutadmin.html.twig" %}
+
+{% block content %}
+    <div class="container-fluid">
+
+        {% if users %}
+        {% for user in users %}
+            <div class="container-fluid col-lg-4">
+                <p class="text-center">{{ user.email }}</p>
+                <form action="/panel/users/admin" method="post">
+                    <input type="hidden" name="__csrf" id="__csrf" value="{{ __csrf }}" />
+                    <input type="hidden" name="users_id" value="{{ user.id }}">
+                    <button type="submit" class="btn-block btn-danger">Enlever le rôle admin</button>
+                </form>
+            </div>
+        {% endfor %}
+            {% else %}
+            <p>Aucun utilisateur n'est désigné comme administrateur</p>
+        {% endif %}
+    </div>
+{% endblock %}

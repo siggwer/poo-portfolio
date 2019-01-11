@@ -1,0 +1,43 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    <title>Connexion</title>
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <form action="/login" method="post" class="col-lg-6 offset-lg-3">
+                <input type="hidden" name="__csrf" id="__csrf" value="{{ __csrf }}" />
+
+                <!-- Le pseudo -->
+                <div class="form-group">
+                    <label for="name">adresse mail :</label>
+                    <input type="text" class="form-control input-sm" name="email"
+                           placeholder="" value="{{ users.email}}">
+                </div>
+
+                <!-- Le mot de passe -->
+                <div class="form-group">
+                    <label for="pass">mot de passe :</label>
+                    <input type="password" class="form-control input-sm" name="pass"
+                           placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox">
+                            <input type="checkbox" name="remember" id="remember"/>
+                            <label for="remember">Se souvenir de moi</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    Se connecter
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
