@@ -59,10 +59,10 @@ class Application
     {
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->useAutowiring(true);
-        $containerBuilder->addDefinitions(__DIR__.'/../configs/dic/database.php');
-        $containerBuilder->addDefinitions(__DIR__.'/../configs/dic/repositories.php');
-        $containerBuilder->addDefinitions(__DIR__.'/../configs/dic/render.php');
-        $containerBuilder->addDefinitions(__DIR__. '/../configs/dic/SwiftMailer.php');
+        //$containerBuilder->addDefinitions(__DIR__.'/../config/dic/database.php');
+        //$containerBuilder->addDefinitions(__DIR__.'/../config/dic/repositories.php');
+        $containerBuilder->addDefinitions(__DIR__.'/../config/render.php');
+        //$containerBuilder->addDefinitions(__DIR__. '/../config/dic/SwiftMailer.php');
         $this->container = $containerBuilder->build();
 
         $this->initRouter();
@@ -88,7 +88,7 @@ class Application
                 $middlewares = [];
             }
 
-            $middlewaresGlobals = (require __DIR__.'../app/Middleware/GlobalsMiddlewares/Middlewares.php');
+            $middlewaresGlobals = (require __DIR__.'/../app/Middleware/GlobalsMiddlewares/Middlewares.php');
             $middlewares = array_merge($middlewaresGlobals, $middlewares);
 
             $dispatcher = new Dispatcher($this->container, $middlewares);

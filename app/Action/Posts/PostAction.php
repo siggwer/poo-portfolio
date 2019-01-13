@@ -8,7 +8,7 @@ use App\Services\PostServices;
 use DI\Container;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Romss\Render\RenderInterface;
+use Framework\Render\RenderInterface;
 
 
 class PostAction
