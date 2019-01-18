@@ -7,12 +7,14 @@ interface RenderInterfaces
 {
     /**
      * RenderInterfaces constructor.
+     *
      * @param string $path
      */
     public function __construct(string $path);
 
     /**
      * @param string $namespace
+     *
      * @param null|string $path
      */
 
@@ -28,6 +30,7 @@ interface RenderInterfaces
      * @param string $view
      * @param array|null $params
      * @param string $type
+     * 
      * @return mixed
      */
     public function render(string $view, array $params = null, $type = 'html');

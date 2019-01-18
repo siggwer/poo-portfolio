@@ -19,6 +19,7 @@ class CsrfMiddleware
      * @param Response $response
      * @param Container $container
      * @param $next
+     *
      * @return mixed
      */
     public function __invoke(ServerRequestInterface $request, Response $response, Container $container,  $next)

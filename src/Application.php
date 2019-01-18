@@ -49,6 +49,9 @@ class Application
      */
     private $router;
 
+    /**
+     * Application constructor.
+     */
     public function __construct()
     {
         $this->middlewares = [];
@@ -64,7 +67,6 @@ class Application
         $containerBuilder->addDefinitions(__DIR__.'/../config/render.php');
         //$containerBuilder->addDefinitions(__DIR__. '/../config/dic/SwiftMailer.php');
         $this->container = $containerBuilder->build();
-
         $this->initRouter();
     }
 

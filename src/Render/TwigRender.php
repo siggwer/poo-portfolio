@@ -13,8 +13,8 @@ class TwigRender implements RenderInterface
     public function __construct(string $path)
     {
         $this->loader = new \Twig_Loader_Filesystem($path);
-        $this->twig = new \Twig_Environment($this->loader, []);
-
+        $this->twig = new \Twig_Environment($this->loader, array('debug' => true));
+        $this->twig->addExtension(new \Twig_Extension_Debug());
     }
 
     /**
@@ -32,7 +32,9 @@ class TwigRender implements RenderInterface
      * @param string $view
      * @param array $params
      * @param string $type
+     *
      * @return string
+     *
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
