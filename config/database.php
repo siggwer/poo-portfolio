@@ -14,7 +14,7 @@ use Framework\Database\Pdo\PdoDatabase;
 return [
     'db.type' => di_env('db_type', 'mysql'),
     'db.host' => di_env('db_user', 'localhost'),
-    'db.name' => di_env('db_name', 'blog2'),
+    'db.name' => di_env('db_name', 'portfolio'),
     'db.port' => di_env('db_port', 3306),
 
     'db.dsn' => di_string('{db.type}:host={db.host};dbname={db.name};port={db.port};charset=utf8'),

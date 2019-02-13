@@ -62,8 +62,8 @@ class Application
     {
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->useAutowiring(true);
-        //$containerBuilder->addDefinitions(__DIR__.'/../config/dic/database.php');
-        //$containerBuilder->addDefinitions(__DIR__.'/../config/dic/repositories.php');
+        $containerBuilder->addDefinitions(__DIR__.'/../config/database.php');
+        $containerBuilder->addDefinitions(__DIR__.'/../config/repositories.php');
         $containerBuilder->addDefinitions(__DIR__.'/../config/render.php');
         //$containerBuilder->addDefinitions(__DIR__. '/../config/dic/SwiftMailer.php');
         $this->container = $containerBuilder->build();

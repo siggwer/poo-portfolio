@@ -12,7 +12,7 @@
         "zendframework/zend-expressive-fastroute": "^1.2",
         "willdurand/negotiation": "^2.3",
         "sendgrid/sendgrid": "~7",
-        "swiftmailer/swiftmailer": "^6.0"
+        "ext-PDO": "*"
     },
     "autoload":{
         "psr-4": {

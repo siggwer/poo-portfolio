@@ -37,11 +37,9 @@ class PdoDatabase extends PDO implements DatabaseInterface
     }
 
     /**
-     * représente la requête à faire avec les données
-     * dynamique nécessaire à la requête
+     * @param string $statement
+     * @param array $params
      *
-     * @param string $statement La requête à faire
-     * @param array $params Les données dynamique
      * @return StatementInterface
      */
     public function request(string $statement, array $params = []): StatementInterface

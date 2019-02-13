@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\PostRepositoriesInterface;
-use Romss\Database\StatementInterface;
+use Framework\Database\StatementInterface;
 
 class PostServices
 {
