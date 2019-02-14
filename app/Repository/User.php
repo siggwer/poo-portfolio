@@ -1,5 +1,5 @@
 <?php
-namespace App\Repositories;
+namespace App\Repository;
 
 
 use DateTime;
@@ -17,6 +17,7 @@ class User
 
     /**
      * post constructor.
+     *
      * @param array $data
      */
     public function __construct($data = [])

@@ -6,8 +6,14 @@ namespace Framework\Render;
 
 class TwigRender implements RenderInterface
 {
-
+    /**
+     * @var \Twig_Environment
+     */
     private $twig;
+
+    /**
+     * @var \Twig_Loader_Filesystem
+     */
     private $loader;
 
     public function __construct(string $path)
@@ -19,7 +25,8 @@ class TwigRender implements RenderInterface
 
     /**
      * @param string $namespace
-     * @param null|string $path
+     * @param string|null $path
+     *
      * @throws \Twig_Error_Loader
      */
     public function addPath(string $namespace, ?string $path = null): void

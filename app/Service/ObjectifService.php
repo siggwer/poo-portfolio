@@ -10,7 +10,7 @@ class ObjectifService
     /**
      * @var
      */
-    private $ObjectifRepository;
+    private $Objectif;
 
     /**
      * ObjectifService constructor.
@@ -19,7 +19,7 @@ class ObjectifService
      */
     public function __construct(ObjectifRepositoryInterface $objectifRepository)
     {
-        $this->ObjectifRepository = $objectifRepository;
+        $this->Objectif = $objectifRepository;
     }
 
     /**
@@ -27,7 +27,7 @@ class ObjectifService
      */
     public function allObjectif(): array
     {
-        $objectif = $this->allObjectif();
+        $objectif = $this->Objectif->allObjectifs();
         return $objectif;
     }
 

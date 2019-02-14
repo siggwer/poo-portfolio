@@ -25,8 +25,8 @@ class PdoObjectifRepository implements ObjectifRepositoryInterface
     /**
      * @return array
      */
-    public function allObjectif(): array
+    public function allObjectifs(): array
     {
-        return $this->database->request('SELECT * FROM objectif')->fetchAll();
+        return $this->database->request('SELECT * FROM objectif LIMIT 1')->fetchAll();
     }
 }

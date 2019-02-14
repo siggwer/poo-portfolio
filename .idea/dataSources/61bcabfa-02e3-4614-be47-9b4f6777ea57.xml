@@ -918,122 +918,179 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="231" parent="7" name="experience_professionnelle">
+    <table id="231" parent="7" name="competence"/>
+    <table id="232" parent="7" name="experience_professionnelle">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="232" parent="7" name="objectif">
+    <table id="233" parent="7" name="formation"/>
+    <table id="234" parent="7" name="objectif">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="233" parent="7" name="projets_etudes">
+    <table id="235" parent="7" name="projets_etudes">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="234" parent="7" name="projets_professionnels">
+    <table id="236" parent="7" name="projets_professionnels">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="235" parent="231" name="idexperience_professionnelle">
+    <column id="237" parent="231" name="idcompetence">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="231" name="nom">
+    <column id="238" parent="231" name="content">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="239" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idcompetence</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="240" parent="232" name="idexperience_professionnelle">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="232" name="nom">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="231" name="date">
+    <column id="242" parent="232" name="date_debut">
       <Position>3</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="231" name="titre">
+    <column id="243" parent="232" name="date_fin">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="231" name="content">
+    <column id="244" parent="232" name="titre">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="240" parent="231" name="PRIMARY">
+    <column id="245" parent="232" name="content">
+      <Position>6</Position>
+      <DataType>longtext|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="246" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idexperience_professionnelle</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="241" parent="232" name="idobjectif">
+    <column id="247" parent="233" name="idformation">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="232" name="content">
+    <column id="248" parent="233" name="nom">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="243" parent="232" name="PRIMARY">
+    <column id="249" parent="233" name="organisme">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="250" parent="233" name="date_debut">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="233" name="date_fin">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="252" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idformation</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="253" parent="234" name="idobjectif">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="234" name="content">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="255" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idobjectif</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="244" parent="233" name="idprojets_professionnels">
+    <column id="256" parent="235" name="idprojets_etudes">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="233" name="titre">
+    <column id="257" parent="235" name="titre">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="233" name="description">
+    <column id="258" parent="235" name="description">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="233" name="mission">
+    <column id="259" parent="235" name="mission">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="233" name="Compétences_validees">
+    <column id="260" parent="235" name="Compétences_validees">
       <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="249" parent="233" name="PRIMARY">
+    <key id="261" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>idprojets_professionnels</ColNames>
+      <ColNames>idprojets_etudes</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="250" parent="234" name="idprojets_professionnels">
+    <column id="262" parent="236" name="idprojets_professionnels">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="234" name="titre">
+    <column id="263" parent="236" name="titre">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="234" name="description">
+    <column id="264" parent="236" name="description">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="234" name="mission">
+    <column id="265" parent="236" name="mission">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="254" parent="234" name="PRIMARY">
+    <key id="266" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idprojets_professionnels</ColNames>
       <Primary>1</Primary>

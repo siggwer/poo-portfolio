@@ -1,8 +1,8 @@
 <?php
-namespace App\Repositories;
+namespace App\Repository;
 
 
-use Romss\Database\StatementInterface;
+use Framework\Database\StatementInterface;
 
 interface UserRepositoriesInterface
 {

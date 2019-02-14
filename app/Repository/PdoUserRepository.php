@@ -1,8 +1,8 @@
 <?php
-namespace App\Repositories;
+namespace App\Repository;
 
-use Romss\Database\DatabaseInterface;
-use Romss\Database\StatementInterface;
+use Framework\Database\DatabaseInterface;
+use Framework\Database\StatementInterface;
 
 class PdoUserRepository implements UserRepositoriesInterface
 {

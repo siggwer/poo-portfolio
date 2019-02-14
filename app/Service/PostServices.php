@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Repositories\PostRepositoriesInterface;
+use App\Repository\PostRepositoriesInterface;
 use Framework\Database\StatementInterface;
 
 class PostServices

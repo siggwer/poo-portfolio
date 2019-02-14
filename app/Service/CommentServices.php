@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Repositories\CommentRepositoriesInterface;
+use App\Repository\CommentRepositoriesInterface;
 
 class CommentServices
 {

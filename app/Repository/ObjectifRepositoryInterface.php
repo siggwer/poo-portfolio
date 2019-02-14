@@ -2,11 +2,10 @@
 
 namespace App\Repository;
 
-
 interface ObjectifRepositoryInterface
 {
     /**
      * @return array
      */
-    public function allObjectif(): array;
+    public function allObjectifs(): array;
 }
