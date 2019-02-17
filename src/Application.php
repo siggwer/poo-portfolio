@@ -65,7 +65,9 @@ class Application
         $containerBuilder->addDefinitions(__DIR__.'/../config/database.php');
         $containerBuilder->addDefinitions(__DIR__.'/../config/repositories.php');
         $containerBuilder->addDefinitions(__DIR__.'/../config/render.php');
-        //$containerBuilder->addDefinitions(__DIR__. '/../config/dic/SwiftMailer.php');
+        $containerBuilder->addDefinitions(__DIR__. '/../config/serviceMail.php');
+        $containerBuilder->addDefinitions(__DIR__ . '/../config/mail.php');
+        //$containerBuilder->addDefinitions(__DIR__. '/../config/dic/serviceMail.php');
         $this->container = $containerBuilder->build();
         $this->initRouter();
     }

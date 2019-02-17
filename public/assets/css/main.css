@@ -184,7 +184,9 @@ input, select, textarea {
 			text-decoration: none;
 			border-bottom-color: transparent;
 		}
-
+	.top{
+		color: #ffffff;
+	}
 	strong, b {
 		font-weight: 600;
 		color: #000000;
@@ -3419,6 +3421,7 @@ input, select, textarea {
 
 		#wrapper > section.intro > header > * {
 			width: 25rem;
+			color: #ffffff;
 		}
 
 		#wrapper > section.intro > header:before {
