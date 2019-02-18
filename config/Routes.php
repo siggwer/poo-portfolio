@@ -3,7 +3,7 @@
 //All routes
 return [
     'home.index' => [
-        'methods' => ['GET'],
+        'methods' => ['GET', 'POST'],
         'path' => '/',
         'action' => App\Actions\Home\IndexAction::class,
         'middlewares' => []

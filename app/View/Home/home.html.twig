@@ -393,13 +393,14 @@ print 'Sorted in ' + i + ' iterations.';</code></pre>
         -->
 
         <!-- Section -->
-        <section>
+        <section id="contact">
             <header>
                 <h2>Contact</h2>
             </header>
             <div class="content">
                 <p><strong>Auctor commodo</strong> interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.</p>
-                <form>
+                <form name="sentMessage" id="contactForm" novalidate method="post" action="/home.index">
+                    <input type="hidden" name="__csrf" id="__csrf" value="{{ __csrf }}" />
                     <div class="fields">
                         <div class="field half">
                             <input type="text" name="name" id="name" placeholder="Name" />

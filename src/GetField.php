@@ -5,6 +5,7 @@ trait GetField
 {
     /**
      * @param array $field
+     *
      * @return null
      */
     protected function getField($field)
@@ -14,15 +15,17 @@ trait GetField
 
     /**
      * @param array $session
+     *
      * @return null
      */
-    protected function  getSession($session)
+    protected function getSession($session)
     {
       return $_SESSION[$session] ?? null;
     }
 
     /**
      * @param array $files
+     *
      * @return null
      */
     protected function getFiles($files)

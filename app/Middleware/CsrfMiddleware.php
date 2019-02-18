@@ -9,7 +9,6 @@ use Framework\Flashable;
 use Framework\GetField;
 use Framework\Tokenable;
 
-
 class CsrfMiddleware
 {
     use Tokenable, Flashable, GetField;

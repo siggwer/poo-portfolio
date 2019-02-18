@@ -2,8 +2,6 @@
 
 namespace Framework\Render;
 
-
-
 class TwigRender implements RenderInterface
 {
     /**

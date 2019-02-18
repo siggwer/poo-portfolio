@@ -3,11 +3,9 @@
 namespace  App\Middlewares;
 
 use DI\Container;
-
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ServerRequestInterface;
 use Framework\Flashable;
-
 
 class RoleMiddleware
 {
