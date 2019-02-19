@@ -2,7 +2,7 @@
 
 namespace Framework;
 
-use Framework\Interfaces\RenderInterfaces;
+use Framework\Render\RenderInterface;
 use SendGrid\Mail\Mail;
 
 class MailHelper
@@ -13,7 +13,7 @@ class MailHelper
     private $sendGridApiKey;
 
     /**
-     * @var RenderInterfaces
+     * @var RenderInterface
      */
     private $render;
 
@@ -21,9 +21,9 @@ class MailHelper
      * MailHelper constructor.
      *
      * @param string $sendgridApiKey
-     * @param RenderInterfaces $render
+     * @param RenderInterface $render
      */
-    public function __construct(string $sendGridApiKey, RenderInterfaces $render) {
+    public function __construct(string $sendGridApiKey, RenderInterface $render) {
 
         $this->sendgridApiKey = $sendGridApiKey;
         $this->render = $render;

@@ -30,6 +30,7 @@ class IndexAction
     /**
      * IndexAction constructor.
      *
+     * @param MailHelper $mailHelper
      * @param ObjectifService $objectif
      */
     public function __construct(MailHelper $mailHelper, ObjectifService $objectif)

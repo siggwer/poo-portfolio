@@ -14,6 +14,11 @@ class TwigRender implements RenderInterface
      */
     private $loader;
 
+    /**
+     * TwigRender constructor.
+     *
+     * @param string $path
+     */
     public function __construct(string $path)
     {
         $this->loader = new \Twig_Loader_Filesystem($path);
@@ -31,7 +36,6 @@ class TwigRender implements RenderInterface
     {
         $this->loader->addPath($path, $namespace);
     }
-
 
     /**
      * @param string $view
@@ -58,7 +62,6 @@ class TwigRender implements RenderInterface
 
      return $this->twig->render($view.".{$type}.twig", $params);
     }
-
 
     /**
      * @param string $key
