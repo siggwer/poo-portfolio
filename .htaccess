@@ -1,0 +1,25 @@
+# Redirection vers HTTPS
+RewriteCond %{SERVER_PORT} ^80$ [OR]
+RewriteCond %{HTTPS} =off
+RewriteRule ^(.*)$ https://www.jeromesauvage.fr/$1 [R=301,L]
+
+# Redirection du www vers non-www en HTTPS
+RewriteCond %{HTTP_HOST} ^monsite.com [NC]
+RewriteRule ^(.*)$ https://www.jeromesauvage.fr/$1 [R=301,L]
+
+# Disable directory browsing
+Options All -Indexes
+
+# Empêche le hotlinking image. Remplacez les URLs avec les vôtres
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www.)?jeromesauvage.fr [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www.)?jeromesauvage.fr [NC]
+RewriteRule .(jpg|jpeg|png|gif)$ http://i.imgur.com/MlQAH71.jpg [NC,R,L]
+
+# protège htaccess
+<Files ~ "^.*.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</Files>
