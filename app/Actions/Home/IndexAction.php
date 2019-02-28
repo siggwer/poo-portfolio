@@ -3,7 +3,9 @@
 namespace  App\Actions\Home;
 
 use App\Service\ObjectifService;
+use App\Service\FormationService;
 use DI\Container;
+use GuzzleHttp\Psr7\Response;
 use DI\DependencyException;
 use DI\NotFoundException;
 use Psr\Http\Message\ResponseInterface;
@@ -28,15 +30,22 @@ class IndexAction
     private $objectif;
 
     /**
+     * @var
+     */
+    private $formation;
+
+    /**
      * IndexAction constructor.
      *
      * @param MailHelper $mailHelper
      * @param ObjectifService $objectif
+     * @param FormationService $formation
      */
-    public function __construct(MailHelper $mailHelper, ObjectifService $objectif)
+    public function __construct(MailHelper $mailHelper, ObjectifService $objectif, FormationService $formation)
     {
         $this->mailHelper = $mailHelper;
         $this->objectif = $objectif;
+        $this->formation = $formation;
     }
 
 
@@ -45,16 +54,18 @@ class IndexAction
      * @param ResponseInterface $response
      * @param Container $container
      *
-     * @return ResponseInterface
+     * @return Response|ResponseInterface
      *
      * @throws DependencyException
      * @throws NotFoundException
+     * @throws \SendGrid\Mail\TypeException
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, Container $container)
     {
         if ($request->getMethod() === 'GET') {
             $objectif = $this->objectif->allObjectif();
-            $view = $container->get(RenderInterface::class)->render('Home/home', ['objectif' => $objectif]);
+            $formation =$this->formation->allFormation();
+            $view = $container->get(RenderInterface::class)->render('Home/home', ['objectif' => $objectif, 'formation' => $formation]);
             $response->getBody()->write($view);
             return $response;
         }
@@ -95,21 +106,6 @@ class IndexAction
             ]);
         }
 
-        // Connexion au smtp
-        //$transport = $container->get(Swift_SmtpTransport::class);
-
-        // Container du mail
-        //$mailer = new Swift_Mailer($transport);
-
-        // Le message à envoyer
-        //$message = new Swift_Message($name);
-        //$message
-        //->setFrom(['localhost@test' => 'Admin'])
-        //->setTo([$email => $name])
-        //->setBody($content);
-
-        //$result = $mailer->send($message);
-
         $from = [
             'email' => 'test@yopmail.com',
             'name' => 'admin',
@@ -119,9 +115,9 @@ class IndexAction
             'name' =>  explode('@', $email)[0],
         ];
 
-        $result = $this->MailHelper->sendMail('Confirmation de votre message', $from, $to, 'mailVerify');
+        $result = $this->mailHelper->sendMail('Confirmation de votre message', $from, $to, 'mailVerify');
         if ($result->statusCode() === 202) {
-            $this->setFlash('success', 'Merci pour votre message nous vous répondrons dans les meilleures délais');
+            $this->setFlash('success', 'Merci pour votre message nous vous répondrons dans les meilleures délais.');
         }
 
         return new Response(301,[
