@@ -99,7 +99,7 @@ class IndexAction
         //}
 
         $messageLength = strlen($message);
-        if ($messageLength < 50) {
+        if ($messageLength < 10) {
             $this->setFlash("danger", "Votre message doit contenir au minimum 50 caractères");
             return new Response(301, [
                 'Location' => '/#contact'
@@ -107,15 +107,15 @@ class IndexAction
         }
 
         $from = [
-            'email' => 'test@yopmail.com',
-            'name' => 'admin',
+            'email' => 'jerome.sauvage@etu.unilim.fr',
+            'name' => 'portfolio',
         ];
         $to = [
             'email' => $email,
             'name' =>  explode('@', $email)[0],
         ];
 
-        $result = $this->mailHelper->sendMail('Confirmation de votre message', $from, $to, 'mailVerify');
+        $result = $this->mailHelper->sendMail('Confirmation de votre message', $from, $to, 'Mails/verify');
         if ($result->statusCode() === 202) {
             $this->setFlash('success', 'Merci pour votre message nous vous répondrons dans les meilleures délais.');
         }

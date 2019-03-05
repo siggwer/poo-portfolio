@@ -108,7 +108,7 @@ class Application
 
             send_response($result);
         } else {
-            $rendering = $this->container->get(RenderInterface::class)->render('Errors/404');
+            $rendering = $this->container->get(RenderInterface::class)->render('/Errors/404');
             send_response(new Response(404, [], $rendering));
         }
     }

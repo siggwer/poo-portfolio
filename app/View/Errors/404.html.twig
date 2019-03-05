@@ -1,13 +1,33 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    <title>404</title>
+    <title>404 Not found</title>
 {% endblock %}
 
 
 {% block content %}
-<div class="container-fluid">
-    <h1 class="text-center">404 Not Found</h1>
-    <img class="img404 text-center" src="/images/404.png">
+    <div id="wrapper">
+    <section class="intro">
+        <h1>404 page not found</h1>
+        <div class="content">
+            <span class="image fill404" data-position="center"><img src="/images/error.png" alt="" /></span>
+        </div>
+        <section>
+        <div class="content">
+            <p><strong>La page</strong> demandée n'existe pas. Cliquez sur le lien pour revenir à l'accueil.</p>
+               <a href="/" class="button large">Retour accueil</a>
+
+        </div>
+        </section>
+    </section>
+    </div>
+
+<!--<div id="wrapper">
+    <section class="intro">
+        <h1 class="text-center">404 Not Found</h1>
+    </section>
+<div class="content">
+    <span class=""><img src="/images/error_1.png" alt="" /></span>
 </div>
+</div>-->
 {% endblock %}

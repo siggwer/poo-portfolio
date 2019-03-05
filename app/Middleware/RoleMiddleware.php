@@ -13,7 +13,7 @@ class RoleMiddleware
 
     public function __invoke(ServerRequestInterface $request, Response $response, Container $container, $next)
     {
-         if (!isset($_SESSION['auth']) || $_SESSION['auth']->rank() <=1) {
+         if (!isset($_SESSION['auth']) || $_SESSION['auth']->getRank() <=1) {
              $this->setFlash("danger", "Vous devez être admin pour entrer");
              return new Response(301, [
                  'Location' => '/'
