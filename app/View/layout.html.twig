@@ -17,6 +17,8 @@
 	<link rel="icon" type="image/png" href="/images/favicon_js_16x16.png" />
 	<!--Fontawesome mfizz-->
 	<link rel="stylesheet" href="/assets/fonts/font-mfizz.css" />
+	<!--Cookies-->
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
 	<!--Favicon-->
 	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
 	<!--[endif]-->
@@ -32,12 +34,70 @@
 	</div>
 {% endif %}
 {% block content %} {% endblock %}
-<!-- Scripts -->
+<!-- Scripts jquery -->
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/jquery.scrolly.min.js"></script>
+<!-- Scripts javascript-->
 <script src="/assets/js/browser.min.js"></script>
 <script src="/assets/js/breakpoints.min.js"></script>
 <script src="/assets/js/util.js"></script>
 <script src="/assets/js/main.js"></script>
+<!-- Scripts cookies-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+	window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+			"palette": {
+				"popup": {
+					"background": "#ffffff",
+					"text": "#2d3744"
+				},
+				"button": {
+					"background": "transparent",
+					"text": "#43d9b8",
+					"border": "#43d9b8"
+				}
+			},
+			"type": "opt-in",
+			"content": {
+				"message": "Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.",
+				"dismiss": "Refuser",
+				"deny": "Refuser",
+				"allow": "Accepter les cookies",
+				"link": "En savoir plus",
+				"href": "https://www.jeromesauvage.fr/mention"
+			},
+			onInitialise: function (status) {
+				var type = this.options.type;
+				var didConsent = this.hasConsented();
+				if (type == 'opt-in' && didConsent) {
+					// enable cookies
+				}
+				if (type == 'opt-out' && !didConsent) {
+					// disable cookies
+				}
+			},
+			onStatusChange: function(status, chosenBefore) {
+				var type = this.options.type;
+				var didConsent = this.hasConsented();
+				if (type == 'opt-in' && didConsent) {
+					// enable cookies
+				}
+				if (type == 'opt-out' && !didConsent) {
+					// disable cookies
+				}
+			},
+			onRevokeChoice: function() {
+				var type = this.options.type;
+				if (type == 'opt-in') {
+					// disable cookies
+				}
+				if (type == 'opt-out') {
+					// enable cookies
+				}
+			},
+		})});
+</script>
+
 </body>
 </html>

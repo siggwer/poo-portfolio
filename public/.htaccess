@@ -1,3 +1,5 @@
+
+RewriteOptions inherit
 # "-Indexes" will have Apache block users from browsing folders without a default document
 # Usually you should leave this activated, because you shouldn't allow everybody to surf through
 # every folder on your server (which includes rather private places like CMS system folders).
@@ -12,7 +14,6 @@
   RewriteCond %{SCRIPT_FILENAME} -f
   RewriteRule "(^|/)\." - [F]
 </IfModule>
-
 
 # Block access to backup and source files
 # These files may be left by some text/html editors and

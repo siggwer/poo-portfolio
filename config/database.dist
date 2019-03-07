@@ -9,8 +9,8 @@ use function \DI\env as di_env;
 use function \DI\string as di_string;
 use function \DI\object as di_object;
 
-use Romss\Database\DatabaseInterface;
-use Romss\Database\Pdo\PdoDatabase;
+use Framework\Database\DatabaseInterface;
+use Framework\Database\Pdo\PdoDatabase;
 
 return [
     'db.type' => di_env('db_type', 'mysql'),

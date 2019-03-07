@@ -8,12 +8,12 @@ return [
         'action' => App\Actions\Home\IndexAction::class,
         'middlewares' => []
     ],
-   // 'posts.index' => [
-    //   'methods' => ['GET'],
-    //   'path' => '/posts',
-    //  'action' => App\Actions\Posts\AllPostAction::class,
-    // 'middlewares' => []
-    // ],
+    'mention' => [
+       'methods' => ['GET'],
+       'path' => '/mention',
+      'action' => App\Actions\Mention\MentionController::class,
+     'middlewares' => []
+    ]
     // 'posts.details' => [
     //   'methods' => ['GET'],
     //  'path' => '/posts/{post:[0-9]+}',
