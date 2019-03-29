@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-
 class ProjetsProfessionels extends AbstractModel
 {
     /**

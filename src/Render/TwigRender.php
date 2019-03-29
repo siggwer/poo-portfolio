@@ -60,7 +60,7 @@ class TwigRender implements RenderInterface
         $params['__csrf'] = $_SESSION['__csrf'] ?? null;
         $params['__page'] = $view.".{$type}.twig";
 
-     return $this->twig->render($view.".{$type}.twig", $params);
+        return $this->twig->render($view.".{$type}.twig", $params);
     }
 
     /**

@@ -21,7 +21,7 @@ class CsrfMiddleware
      *
      * @return mixed
      */
-    public function __invoke(ServerRequestInterface $request, Response $response, Container $container,  $next)
+    public function __invoke(ServerRequestInterface $request, Response $response, Container $container, $next)
     {
         $csrf = $this->generateToken();
 

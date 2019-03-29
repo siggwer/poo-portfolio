@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-
 class ProjetsEtudes extends AbstractModel
 {
     /**

@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Repository\ObjectifRepositoryInterface;
+
 //use Framework\Database\StatementInterface;
 
 class ObjectifService
@@ -30,5 +31,4 @@ class ObjectifService
         $objectif = $this->objectifRepository->allObjectifs();
         return $objectif;
     }
-
 }

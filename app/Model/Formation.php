@@ -1,7 +1,6 @@
 <?php
 namespace App\Model;
 
-
 class Formation extends AbstractModel
 {
     /**

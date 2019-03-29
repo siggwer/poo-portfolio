@@ -2,7 +2,6 @@
 
 namespace Framework;
 
-
 use DI\Container;
 use DI\ContainerBuilder;
 use GuzzleHttp\Psr7\Response;
@@ -13,7 +12,7 @@ use Framework\Render\RenderInterface;
 use Zend\Expressive\Router\FastRouteRouter;
 use Zend\Expressive\Router\Route;
 
-use function QuimCalpe\ResponseSender\send AS send_response;
+use function QuimCalpe\ResponseSender\send as send_response;
 
 /**
  * Class Application

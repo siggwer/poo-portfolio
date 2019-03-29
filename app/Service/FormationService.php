@@ -29,5 +29,4 @@ class FormationService
         $allPost = $this->formationRepository->allFormation();
         return $allPost;
     }
-
 }

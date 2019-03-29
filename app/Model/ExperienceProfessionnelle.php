@@ -1,7 +1,6 @@
 <?php
 namespace App\Model;
 
-
 class ExperienceProfessionnelle extends AbstractModel
 {
     /**

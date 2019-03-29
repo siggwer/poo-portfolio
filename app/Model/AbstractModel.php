@@ -13,8 +13,7 @@ abstract class AbstractModel
      */
     public function __construct($data = [])
     {
-        if (!empty($data))
-        {
+        if (!empty($data)) {
             $this->hydrate($data);
         }
     }
@@ -24,12 +23,10 @@ abstract class AbstractModel
      */
     protected function hydrate(array $data)
     {
-        foreach($data as $key => $value)
-        {
+        foreach ($data as $key => $value) {
             $method = 'set'.ucfirst($key);
 
-            if (is_callable([$this, $method]))
-            {
+            if (is_callable([$this, $method])) {
                 $this->$method($value);
             }
         }

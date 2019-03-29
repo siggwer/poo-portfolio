@@ -23,7 +23,6 @@ try {
     $app = new Application();
     $app->init();
     $app->run();
-
 } catch (Exception $exception) {
     var_dump($exception->getMessage());
 }

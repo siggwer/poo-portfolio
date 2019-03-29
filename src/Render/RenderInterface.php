@@ -2,7 +2,6 @@
 
 namespace Framework\Render;
 
-
 interface RenderInterface
 {
     /**
@@ -25,7 +24,7 @@ interface RenderInterface
      *
      * @return mixed
      */
-    public function render(string  $view,  array $params = null, $type = 'html');
+    public function render(string  $view, array $params = null, $type = 'html');
 
     /**
      * @param string $key
