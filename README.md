@@ -1,4 +1,6 @@
-"# poo-portfolio" 
+"poo-portfolio"
+
+<a href="https://www.codacy.com/app/siggwer/poo-portfolio?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=siggwer/poo-portfolio&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/e4f15806543b48ffa9cd8434818255fd"/></a>
 
 Hello,
 
