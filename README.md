@@ -1,3 +1,6 @@
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b894c76a41774c5799431f82f17de5eb)](https://app.codacy.com/app/siggwer/poo-portfolio?utm_source=github.com&utm_medium=referral&utm_content=siggwer/poo-portfolio&utm_campaign=Badge_Grade_Dashboard)
+
 "# poo-portfolio" 
 
 Hello,
